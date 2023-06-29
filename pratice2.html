@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <!--action은 서버가 처리할 서버 url-->
+    <!--multipart은 파일이 있을 때만 사용, 없을 때는 사용 안해도 됨-->
+    <form action="resiter" method="get" enctype="multipart/form-data">
+        <!--name은 서버에서 사용하기 위한 이름
+        id는 클라이언트에서 사용하기 위한 이름
+        유효성 검사를 해주는 것이 좋음-->
+        <label>이름:<input type="text" name="name" id="name" /></label>
+        <br/>
+        <input name="gender" type="radio"/>남자
+        <input name="gender" type="radio" checked="checked"/>여자
+        <button>보내기</button>
+        <!--블록과 인라인 차이 구분-->
+        <div>블록</div>
+        <span>인라인</span>
+        <span>인라인</span>
+        <!--다른 파일을 가져오는 것이 iframe-->
+        <!--src는 직접 써야함-->
+        <iframe src="practice.html"></iframe>
+    </form>
+    
+</body>
+</html>

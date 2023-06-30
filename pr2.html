@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jS_PR</title>
+    <!--외부에 있는 js파일을 가져와서 사용-->
+    <script src="./js/main.js"></script>
+</head>
+<body>
+    <!--인라인-->
+    <button onclick="alert('첫번째 버튼 입니다.')">버튼</button>
+
+    <!--script 태그 이용
+    위에다가 쓰면 동작을 안함, 왜냐하면 id="btn"이 밑에 있기 때문에-->
+    <button id="btn">버튼</button>
+    <script>
+        document.getElementById("btn").addEventListener("click", 
+        function(){
+            alert('두번째 버튼 입니다.')
+        })
+    </script>
+</body>
+</html> 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        let score = 60
+        // score가 60점 이상이면 합격
+        if(score >= 60){
+            console.log("합격")
+            // let을 붙이면 지역변수로 생성이 된다.
+            // 블럭 외부에서는 사용할 수 없음
+            // let name = 'adam'
+        }
+        // console.log(name)
+        */
+
+    /*
+        let score = 100
+        let msg
+        if(score >= 60){
+            msg = '합격'
+        }else{
+            msg = '불합격'
+        }
+        console.log(msg) */
+    
+    // 코테 문제를 풀 때는 범위를 정확히 해야한다.
+    /* let score = 120
+    if(score <= 100 && score >= 80){
+        console.log('우수')
+    }else if(score < 80 && score >= 60){
+        console.log('보통')
+    }else if(score < 60 && score >= 0){
+        console.log('저조')
+    // 일반적인 처리는 else에 쓰지 않음(예외처리)
+    }else{
+        console.log('잘못된 정수 입니다.')
+    }
+    */
+
+    let year = 2023;
+    // year가 윤년인지 판단해야함
+    // 윤년은 아래 두 조건 중 하나만 만족 하면 됨
+    // 1. 4의 배수이고 100의 배수는 아닌 것
+    // 2. 400의 배수인 경우
+    if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+        console.log(year +'년은 윤년')
+    }else{
+        console.log(year +'년은 윤년이 아님')
+    }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

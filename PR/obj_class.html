@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        // 클래스를 생성하고 인스턴스 생성
+        // 클래스 이름은 관습적으로 대문자로 시작
+        let Member = class{
+            // 생성자
+            constructor(name){
+                this.name = name
+            }
+            // 클래스 안에 메서드를 만들 때는 let이나 function 생략이 가능
+            disp(){
+                console.log(this.name);
+            }
+
+        }
+
+        ar = [ new Member("루시아"), new Member("알토니")];
+
+        for(idx in ar){
+            ar[idx].disp()
+        }
+        */
+
+        let person = class{
+            constructor(name, score){
+                this.name = name
+                this.score = score
+            }
+            // 출력하는 메서드
+            disp(){
+                console.log(this.name + ":"+this.score);
+            }
+            // getter
+            getName(){
+                return this.name
+            }
+            //setter
+            setName(name){
+                this.name = name
+            }
+
+            getScore(){
+                return this.score
+            }
+
+            setScore(score){
+                // 유효성 검사(올바른 데이터인지 아닌지 확인)
+                // 올바른 데이터가 아니면 대입하지 않음
+                if(score < 0 || score > 100){
+                    alert("적절하지 않는 정수")
+                    return;
+                }
+                this.score = score
+            }
+        }
+
+        let obj = new person('수빈', 90);
+        obj.setScore(150)
+        obj.disp()
+
+
+    </script>
+    
+</body>
+</html>

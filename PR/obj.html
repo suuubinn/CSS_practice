@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name: "김수빈",
+            phone: "01030097506",
+            email: "kjb7506@ajou.ac.kr",
+            disp : function(){
+                document.write(this.name + "<br>")
+            }
+        };
+        obj.disp();
+        document.write("==================="+"<br />")
+        console.log(obj.name)
+        console.log(obj.email)
+        // 속성값 변경, upsert
+        obj.name = "수빈"
+        // 속성 추가
+        obj.age = "25"
+        // 속성 제거
+        delete(obj.phone)
+        console.log(obj.name)
+        console.log(obj.age)
+        console.log(obj.phone)
+        
+        
+
+        let item = {
+            ["one"+"two"]:74
+        };
+
+        document.write(item.onetwo);
+    </script>
+    
+</body>
+</html>

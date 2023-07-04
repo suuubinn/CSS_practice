@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--dom-->
+    <div id="display"></div>
+    <input type="text" id="name" />
+    <button id="'btn">버튼</button>
+
+    <script>
+        document.getElementById("btn").addEventListener("click",
+        (e) => {
+            document.getElementById("display").innerHTML =
+                document.getElementById("name").value;
+        })
+
+        /*
+        let Super = class{
+            method(){
+                console.log("상위 클래스의 메서드");
+            }
+        }
+        // Super로 부터 상속받는 Sub클래스 
+        class Sub extends Super{
+            // Overriding 
+            method(){
+                super.method();
+                console.log("하위 클래스의 메서드");
+            }
+        }
+
+        let obj = new Sub();
+        // Sub에는 method가 없지만 상속 받아서 호출이 가능
+        obj.method()
+        */
+       
+        /*
+       // 모두 대문자로 변경하고 좌우 공백 제거
+       let company = '    Subincompany';
+       let result = company.toUpperCase().trim();
+       // trim을 먼저 부르는 것이 좋다
+       let result2 = company.trim().toUpperCase();
+       console.log(result)
+       console.log(result2)
+       // 아래 파일 명에서 확장자를 추출
+       // .을 기준으로 쪼갬 -> 마지막 배열의 값이 hwp
+       // .의 위치를 찾은 다음에 .다음 글자를 뽑아냄 
+       let filename = 'subin.hwp'
+       // 방법1
+       let r = filename.split('.',2)
+       console.log(r[1])
+       console.log(r[r.length-1])
+       //방법2
+       let index = filename.indexOf(".")
+       console.log(filename.substring(6))
+
+
+
+       // CGGC의 모든 위치를 출력하시오
+       // 중첩되는 경우는 앞의 문자열 한 번만 적용
+       let origin = "ABCDECGGCDKEDCGGCGGCDDDD"
+       */
+
+    
+       let ar = [23, 30, 15, 7, 3]
+
+       // 데이터 갯수
+       console.log(ar.length)
+
+       // 데이터 순회
+       for(idx in ar){
+        console.log(ar[idx])
+       }
+
+       // 데이터 순회하면서 작업하기 - forEach
+       // 배열을 순회하면서 데이터를 하나씩 접근하는 함수 
+       // 첫번째는 데이터 두번째는 인덱스 세번쨰는 배열
+       // forEach는 데이터 처리하는데 유용함
+       /*
+       ar.forEach((element,index,array) => {
+            console.log(array)
+       })
+       */
+
+       // map은 사용하는 형태는 foreach와 동일한데
+       // 항상 함수가 데이터를 리턴 해야함 
+       // 리턴한 데이터들을 모아서 다시 배열로 만들어서 리턴
+       let r = ar.map((element, index, array) => {
+            return element+1
+       })
+       console.log(r)
+
+       //filter
+       r = ar.filter((element, index, array) => {
+            return element % 2 == 1
+       })
+       console.log(r)
+
+       let list = [
+            {name:'lee', gender:"남",age:22},
+            {name:'kim', gender:"여",age:20},
+            {name:'park', gender:"남",age:30}
+       ]
+
+       let a = list.filter((element,index, array) => {
+            return element.gender == "남";
+       })
+
+       for(idx in a){
+        console.log("name: "+ a[idx].name +", gender: "+a[idx].gender)
+       }
+
+       //정렬은 sort함수를 호출하면 됨
+       //기본적으로 asc
+       //크기 비교가 가능한 데이터만 정렬을 수행할 수 있음
+       //자리수가 다르면 정렬이 제대로 되지 않음
+       //sort는 호출한 배열의 데이터를 직접 조작한다.
+       ar.sort((left,right) => {
+            if(left > right){return 1}
+            else if(left == right){return 0}
+            else{return -1}
+       })
+       // left - right = asc
+       // right - left = desc
+       ar.sort((left,right) => {
+            return left - right;
+       })
+       console.log(ar)
+
+       list.sort((left, right) => {
+            //return left.age - right.age
+            if(left.name > right.name){return 1}
+            else if(left.name === right.name){return 0}
+            else{return -1}
+       })
+       console.log(list)
+       
+       // bom
+       // alert(navigator.userAgent)
+
+    </script>
+    
+</body>
+</html>

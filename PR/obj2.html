@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        let ar = [{name:"subin", job:"teacher"},
+                 {name:"maria", job:"seller"}];
+        
+        // 객체 2개가 있다고 알려줌 = 
+        // document.write(ar)
+        // {}안으로 들어가기 위해서는 .을 써줘야함
+        // document.write(ar[0].name)
+        
+        for(idx in ar){
+            // alert(ar[idx].name)
+            // 배열 안에 object가 몇개 있는지 알려줌
+            // document.write(ar[idx]+"<br />")
+            // document.write(ar[idx].name+"<br />")
+            // document.write(ar[idx].job+"<br />")
+        }
+        */
+
+        /*
+        for(idx in ar){
+            document.write("[name:"+ar[idx].name+", job:"+ ar[idx].job+"]"+"<br />")
+        }
+        */
+
+        /*
+        let obj = {
+            name:"subin",
+            disp: function(){
+                // 같은 객체에 있는 name을 출력 = this.name
+                // this를 안붙이면 undefined, 출력이 안됨
+                // this = self
+                // obj.name을 쓸 수 없음 -> 코드를 봤을 떄 등호 기준 오른쪽이 먼저 수행되는데
+                // 아직 obj가 정의되지 않아 this.name으로 입력해야함
+                document.write("name: "+this.name)
+            }
+        }
+        obj.disp()
+        */
+
+        // 생성자가 없는 경우 동일한 모양의 2개의 객체 생성
+
+        let ar = [ {name:"subin", disp:function(){console.log(this.name)}},
+                    {name:"maria", disp:function(){console.log(this.name)}}
+                ];
+        
+        for(idx in ar){
+            ar[idx].disp()
+        }
+    
+        
+        // 생성자 - 함수 안에서 this를 사용했기 때문임
+        let person = function(name){
+            this.name = name;
+            this.disp = function(){console.log(this.name)}
+        }
+
+        ar = [new person("subin"), new person('maria')];
+
+        for(idx in ar){
+            ar[idx].disp();
+        }
+
+    </script>
+    
+</body>
+</html>

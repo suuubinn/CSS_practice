@@ -15,10 +15,9 @@
             console.log('hello javascript')
             idx += 1
         }
-        */
 
         // 4,3,2,1,0를 순서대로 출력
-        /* idx = 4;
+         idx = 4;
         while(idx >= 0){
             console.log(idx)
             idx--
@@ -38,17 +37,16 @@
             idx++
         }
         */
-
-     for(i = 0; i <5; i++){
-        for(j = 0; j <5; j++){
-                document.write('*')
-        }
-        document.write('<br/>')
-     }
-
-
     
-
+        for(i = 0; i <5; i++){
+            for(j = 0; j < 5; j++){
+                document.write(' ')
+                if(j % 2 == 0){
+                    document.write('*')
+                }
+            }
+        document.write('<br/>')
+        }
     </script>
     
 </body>
